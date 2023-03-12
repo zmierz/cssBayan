@@ -2,10 +2,6 @@ html {
     box-sizing: border-box;
     font-family: Arial, Helvetica, sans-serif;
   }
- 
-  .image {
-    width: 50%;
-  }
 
   .accordion [type=checkbox] {
     display: none;
@@ -15,13 +11,26 @@ html {
     list-style: none;
   }
 
-  .accordion ul li .image {
-    height: 0px;
-	border-top: 0;
-  }
-
   .accordion label {
     display: block;
     cursor: pointer;
     border: 2px solid black;
+  }
+
+[type=checkbox]:hover ~ .content .image {
+    height: 250px; 
+  }
+
+.content:hover .image:hover {
+    height: 250px; 
+  }
+
+  .accordion [type=checkbox]:checked ~ label ~ .content .image {
+    height: 250px; 
+  }
+
+  .accordion ul li .content .image {
+    height: 0px;
+	border-top: 0;
+    transition: .5s;
   }
